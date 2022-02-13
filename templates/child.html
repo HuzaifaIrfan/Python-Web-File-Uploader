@@ -1,0 +1,18 @@
+
+<select name="ddlNames" id="ddlNames">
+    <option value="Mudassar Khan">Mudassar Khan</option>
+    <option value="John Hammond">John Hammond</option>
+    <option value="Mike Stanley">Mike Stanley</option>
+</select>
+<br />
+<br />
+<input type="button" value="Select" onclick="SetName();" />
+<script type="text/javascript">
+    function SetName() {
+        if (window.opener != null && !window.opener.closed) {
+            var txtName = window.opener.document.getElementById("txtName");
+            txtName.value = document.getElementById("ddlNames").value;
+        }
+        window.close();
+    }
+</script>

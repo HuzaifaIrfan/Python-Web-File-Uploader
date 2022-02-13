@@ -1,0 +1,81 @@
+
+{% extends 'base.html' %} 
+
+
+{% block content %}
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+<script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+
+
+
+
+  <div class="container">
+
+
+<table border="0" cellpadding="0" cellspacing="0">
+
+    <tr>
+        <td>
+            Project Name:&nbsp;
+        </td>
+        <td>
+            <input type="text" id="projname" />
+        </td>
+
+    </tr>
+
+    <tr>
+        <td>
+            Project Report:&nbsp;
+        </td>
+        <td>
+            <input type="text" id="projreport" readonly="readonly" />
+        </td>
+        <td>
+            <input type="button" value="Select Project Report" onclick="UploadFile('projreport')" />
+        </td>
+    </tr>
+        <tr>
+        <td>
+            Project Presentation:&nbsp;
+        </td>
+        <td>
+            <input type="text" id="projpres" readonly="readonly" />
+        </td>
+        <td>
+            <input type="button" value="Select Project Presentation" onclick="UploadFile('projpres')" />
+        </td>
+    </tr>
+</table>
+
+
+
+
+<script type="text/javascript">
+    var popup;
+
+//    var uploadedfilename=""
+
+   // var uploadedfilepath =""
+
+
+    function UploadFile(selector) {
+        popup = window.open(`/upload?type=pdf&selector=${selector}`, "Upload Files", "width=500,height=500");
+        popup.focus();
+    }
+
+
+
+</script>
+
+
+
+
+
+</div>
+
+
+
+{% endblock %}
